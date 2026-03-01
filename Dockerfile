@@ -1,13 +1,13 @@
 FROM node:18-alpine
 
-WORKDIR /app
+WORKDIR /app/backend
 
 COPY package*.json ./
 
 RUN npm install --production
 
-COPY . .
+COPY backend/ .
 
 EXPOSE 5000
 
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
